@@ -10,13 +10,11 @@ AGNNES's core is a trained neural network that imitates the original code by Yua
 
 Our code gives us from the observational data the following parameters described in Almeida et al. 2020:
 
-1. &delta;
-2. Mdot<sub>0</sub>
-3. s
-4. Mdot<sub>j</sub>
-5. p
-6. &epsilon;<sub>e</sub>
-7. &epsilon;<sub>B</sub>
+&delta, Mdot<sub>0</sub>, s, Mdot<sub>j</sub>, p, &epsilon;<sub>e</sub>,  &epsilon;<sub>B</sub>
+
+$\delta$
+
+where
 
 ## Installation
 
