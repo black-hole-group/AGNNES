@@ -18,6 +18,33 @@ Our code gives us from the observational data the following parameters described
 6. &epsilon;<sub>e</sub>
 7. &epsilon;<sub>B</sub>
 
+## Installation
+
+We suggest creating a separate environment with conda for testing:
+
+```bash
+conda create --name agnnes
+conda activate agnnes
+```
+
+Install dependencies:
+
+```bash
+# Basic dependencies
+conda install jupyter jupyterlab numpy matplotlib scikit-learn pandas scipy astropy
+# tensorflow-related
+pip install tensorflow np_utils nmmn
+# SED plotting package
+git clone git@gist.github.com:94c046ee73d5da6211cac37e7da7e659.git
+mv 94c046ee73d5da6211cac37e7da7e659/sedplot.py .
+```
+
+Install AGNNES:
+
+```bash
+git clone git@github.com:black-hole-group/AGNNES.git
+```
+
 ## How to use
 
 AGNNES is a code written in `Python`. To use AGNNES, you need `Python` installed with the following packages:
