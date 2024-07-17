@@ -10,7 +10,7 @@ from keras.models import load_model
 from sklearn.preprocessing import LabelEncoder
 from keras.models import Sequential
 from keras.layers import Dense
-from keras.utils import np_utils
+import np_utils
 from keras import regularizers
 
 #NN = Neural Network
