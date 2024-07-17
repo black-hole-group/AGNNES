@@ -4,17 +4,10 @@ AGNNES: Emulating RIAF and jet emission with neural networks
 
 ## Introduction
 
-This repository allows the fast calculation of the electromagnetic emission from radiatively inefficient accretion flows and relativistic jets as appropriate for low-luminosity active galactic nuclei, using neural networks for emulation. AGNNES then allows spectral fitting and gives the parameter posterior distributions from a sparsely-sampled spectral energy distribution (SED).
+This repository allows the fast calculation of the electromagnetic emission from radiatively inefficient accretion flows and relativistic jets as appropriate for low-luminosity active galactic nuclei, using neural networks for emulation. AGNNES then allows spectral fitting using Markov-chain Monte Carlo methods and gives the parameter posterior distributions from a sparsely-sampled observed spectral energy distribution (SED). AGNNES's core is a neural network trained on the output of [RIAF and jet models](https://github.com/rsnemmen/riaf-sed). More details can be found in [Almeida, Duarte & Nemmen 2021](https://doi.org/10.1093/mnras/stab3353). 
 
-AGNNES's core is a trained neural network that imitates the original code by Yuan and Nemmen. The Neural network calculates LLAGN SEDs based on the free parameters of the system. You can read details at [Almeida, Duarte & Nemmen 2021](https://doi.org/10.1093/mnras/stab3353). Using the Markov-chain Monte Carlo approach, AGNNES can fit observational data to the theoretical model of LLAGN emission. The final results are the complete SED and the parameters' posterior distribution.
+Our code gives the posterior distribution of the following RIAF and jet parameters from observed SEDs: $\delta$, $\dot{M}_0$ (or Mdot0), $s$, $\dot{M}_j$, $p$, $\epsilon_e$, $\epsilon_B$. For an explanation of the meaning of these parameters, check out Almeida et al. (2021).
 
-Our code gives us from the observational data the following parameters described in Almeida et al. 2020:
-
-&delta, Mdot<sub>0</sub>, s, Mdot<sub>j</sub>, p, &epsilon;<sub>e</sub>,  &epsilon;<sub>B</sub>
-
-$\delta$
-
-where
 
 ## Installation
 
@@ -31,7 +24,9 @@ Install dependencies:
 # Basic dependencies
 conda install jupyter jupyterlab numpy matplotlib scikit-learn pandas scipy astropy
 # tensorflow-related
-pip install tensorflow np_utils nmmn
+pip install tensorflow np_utils 
+# Misc. packages
+pip install nmmn tqdm emcee corner
 # SED plotting package
 git clone git@gist.github.com:94c046ee73d5da6211cac37e7da7e659.git
 mv 94c046ee73d5da6211cac37e7da7e659/sedplot.py .
@@ -44,21 +39,6 @@ git clone git@github.com:black-hole-group/AGNNES.git
 ```
 
 ## How to use
-
-AGNNES is a code written in `Python`. To use AGNNES, you need `Python` installed with the following packages:
-
-* numpy
-* pandas
-* matplotlib
-* scipy
-* keras
-* sklearn
-* emcee
-* corner
-* tqdm
-* datetime
-
-Clone AGNNES GitHub folder using `git clone <link>` or downloading it.
 
 You should write the data as the example files `SED-NGC5128.txt` and `SED-NGC5128-limits.txt`, respectively data points and upper limits (in case of no upper limits put at least one very high value -- <i>to be corrected in future</i>). Please save your data/limits files as 
 
@@ -102,7 +82,7 @@ AGNNES is an open code. You are morally obligated to cite the following paper in
 
 We based our work on [`riaf-sed`](https://github.com/rsnemmen/riaf-sed) model developed by Feng Yuan and Rodrigo Nemmen. 
 
-
+## License
 
 Copyright (c) 2021, [Ivan Almeida](https://ivancalmeida.wordpress.com). All rights reserved.
 
