@@ -1,9 +1,10 @@
-# AGNNES
+AGNNES: Emulating RIAF and jet emission with neural networks
+=============================================
 
-## Under construction 
-## Main Idea
 
-This code calculates the Spectral Energy Density (SED) for Low-luminosity Active Galactic Nuclei (LLAGN) sources. We based our work on the [code](https://github.com/rsnemmen/riaf-sed) created by Yuan and Nemmen. The code calculates the multiwavelength emission of a geometrically thick and optically thin hot accretion flow around a supermassive black hole. You can see more details on the [code page](https://github.com/rsnemmen/riaf-sed).
+## Introduction
+
+This repository allows the fast calculation of the electromagnetic emission from radiatively inefficient accretion flows and relativistic jets as appropriate for low-luminosity active galactic nuclei, using neural networks for emulation. AGNNES then allows spectral fitting and gives the parameter posterior distributions from a sparsely-sampled spectral energy distribution (SED).
 
 AGNNES's core is a trained neural network that imitates the original code by Yuan and Nemmen. The Neural network calculates LLAGN SEDs based on the free parameters of the system. You can read details at [Almeida, Duarte & Nemmen 2021](https://doi.org/10.1093/mnras/stab3353). Using the Markov-chain Monte Carlo approach, AGNNES can fit observational data to the theoretical model of LLAGN emission. The final results are the complete SED and the parameters' posterior distribution.
 
@@ -72,9 +73,10 @@ This is an option to penalize more overprediction as underprediction from the mo
 
 ## Reference papers
 
-AGNNES is an open code. You are morally obligated to cite the following paper in any scientific literature that results from the use of any part of this code:
+AGNNES is an open code. You are morally obligated to cite the following paper in any scientific literature that results from the use of any part of this code: [*AGNNES paper*](https://doi.org/10.1093/mnras/stab3353).
 
-- [AGNNES paper](https://doi.org/10.1093/mnras/stab3353)
+We based our work on [`riaf-sed`](https://github.com/rsnemmen/riaf-sed) model developed by Feng Yuan and Rodrigo Nemmen. 
+
 
 
 Copyright (c) 2021, [Ivan Almeida](https://ivancalmeida.wordpress.com). All rights reserved.
