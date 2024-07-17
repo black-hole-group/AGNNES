@@ -304,7 +304,7 @@ Example:
     [If you want to plot the SED] plt.plot(nu,adaf)
     '''
     #Normalizing
-    real_mass=np.log10(RP.real_mass/1.e6)
+    real_mass=np.log10(real_mass/1.e6)
     mass_n=(real_mass-X_mass_min)/(X_mass_max-X_mass_min)
     delta=normalizer(delta, X_delta_min, X_delta_max)
     mdot=normalizer(mdot, X_ar_min, X_ar_max)
