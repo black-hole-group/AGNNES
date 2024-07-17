@@ -40,16 +40,24 @@ git clone git@github.com:black-hole-group/AGNNES.git
 
 ## How to use
 
+### Fitting a SED and getting posteriors
+
 You should write the data as the example files `SED-NGC5128.txt` and `SED-NGC5128-limits.txt`, respectively data points and upper limits (in case of no upper limits put at least one very high value -- <i>to be corrected in future</i>). Please save your data/limits files as 
 
-`data_file='Library/SED-'+filename+'.txt'`
-`limits_file='Library/SED-'+filename+'-limits.txt'`
+```
+data_file='Library/SED-'+filename+'.txt'
+limits_file='Library/SED-'+filename+'-limits.txt'
+```
 
 After setting the data, edit the file `INNANAS_params.py`. Instructions about the fitting parameters are in the next section, "Parameters".
 
 In the AGNNES folder, run `python INNANAS.py` in the terminal. The code will start and print much information on the screen. In the end, the code will save in the folder `Results/` the file `sampler-<filename>.h5` with the MCMC results.
 
 We made available a jupyter notebook `AGNNES.ipynb` in the AGNNES folder. This notebook extracts the posterior distribution for the fitting parameters and makes figures showing them. It is an example of getting information from the `sampler-<filename>.h5` file.
+
+### Computing single RIAF and jet models
+
+Please see the `inference.ipynb` notebook for an example.
 
 ## Parameters 
 
